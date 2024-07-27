@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Textos de Alura</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <img src="/img/Logo.png" alt="Logo de Alura" class="logo">
+        </nav>
+    </header>
+    <main class="contenedor">
+        <section class="input-section">
+            <textarea id="input-texto" class="input-texto" autofocus rows="9" autocorrect="on" placeholder="Escribe el mensaje a encriptar o desencriptar" wrap="soft"></textarea>
+            <p class="input-nota">
+                <img src="/img/bi_exclamation-circle-fill.png" alt="signo de exclamación"> Solo letras minúsculas y sin acentos
+            </p>
+            <div class="button-group">
+                <button id="boton-encriptar" class="btn btn-encriptar">Encriptar</button>
+                <button id="boton-desencriptar" class="btn btn-desencriptar">Desencriptar</button>
+            </div>
+        </section> 
+        <div class="output-section">
+            <textarea id="output-text" class="output-text" rows="9" placeholder="Ningún texto ha sido encontrado"></textarea>
+            <button id="boton-copiar" class="btn btn-copiar">Copiar</button>
+            <img src="/img/Muñeco.png" alt="muñeco" class="output-image">
+        </div>
+    </main>
+  
+    <footer class="footer">
+        <p>Esto ha sido desarrollado por Nyx Paez-2024</p>
+    </footer>
+    <div id="notificacion" class="notificacion">Texto copiado al portapapeles</div>
+    <script src="/js/funciones.js"></script>
+    <script src="/js/btn-copiar.js"></script>
+</body>
+</html>

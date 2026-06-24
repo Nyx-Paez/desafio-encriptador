@@ -1,5 +1,5 @@
 document.getElementById('boton-copiar').addEventListener('click', function() {
-    // Selecciona el contenido del textarea de salida
+    // Selecciona el contenido
     const outputText = document.getElementById('output-text');
     outputText.select();
     outputText.setSelectionRange(0, 99999); // Para móviles
@@ -7,7 +7,7 @@ document.getElementById('boton-copiar').addEventListener('click', function() {
     // Copia el texto al portapapeles
     document.execCommand('copy');
 
-    // Mostrar notificación personalizada
+    // Mostrar notificación
     const notificacion = document.getElementById('notificacion');
     notificacion.classList.add('mostrar');
 
@@ -16,4 +16,3 @@ document.getElementById('boton-copiar').addEventListener('click', function() {
         notificacion.classList.remove('mostrar');
     }, 3000);
 });
-

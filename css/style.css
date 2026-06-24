@@ -1,31 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D8DFE8;
+    background-color: #e0e0d1; /* Color tipo papel/documento antiguo */
     height: 100vh;
     box-sizing: border-box;
 }
 
+/* ==========================================
+   ESTILOS DEL MENÚ DE NAVEGACIÓN (NUEVO)
+   ========================================== */
 .navbar {
     display: flex;
     justify-content: center;
-    margin-bottom: 10%;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
 }
 
-.logo {
-    display: flex;
-    justify-content: flex-start;
+.nav-btn {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+.nav-btn:hover, .nav-btn.activo {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* ==========================================
+   ESTRUCTURAS DE CONTENIDO PRINCIPALES
+   ========================================== */
 .contenedor {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     max-width: 1200px;
     flex-grow: 1;
@@ -33,6 +52,54 @@ body {
     margin-bottom: 80px; 
 }
 
+.titulo-seccion {
+    text-align: center;
+    color: #0A3871;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #0A3871;
+    padding-bottom: 10px;
+}
+
+.dos-columnas {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contenido-texto {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* ==========================================
+   ESTILOS DE LA LÍNEA DE TIEMPO Y CÓDIGO
+   ========================================== */
+.timeline li {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: white;
+    border-left: 5px solid #0A3871;
+    list-style: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.codigo-prompt {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-left: 4px solid #27ae60;
+    margin: 10px 0 20px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ==========================================
+   ESTILOS DEL SIMULADOR (ADAPTADOS)
+   ========================================== */
 .input-section, .output-section {
     width: 48%;
 }
@@ -44,6 +111,7 @@ body {
     padding: 10px;
     resize: none;
     outline: none;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .input-texto {
@@ -64,22 +132,11 @@ body {
     color: #495057;
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    box-sizing: border-box;
-}
-
 .button-group {
     display: flex;
     justify-content: center;
-    align-items: end;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .btn {
@@ -89,28 +146,19 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    width: 150px; 
+    width: 200px; 
+    font-family: inherit;
 }
 
-.btn-encriptar, .btn-desencriptar {
-    background-color: #0A3871;
+.btn-encriptar, .btn-copiar {
+    background-color: #2c3e50; 
     color: white;
 }
 
 .btn-desencriptar {
-    background-color: #D8DFE8;
-    color: #0A3871;
-}
-
-.btn-copiar {
-    background-color: #0A3871;
-    color: white;
-}
-
-.output-image {
-    display: block;
-    margin-bottom: 10px;
-    max-width: 100%;
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    font-weight: bold;
 }
 
 .footer {
@@ -125,7 +173,7 @@ body {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #0A3871;
+    background-color: #2c3e50;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -138,55 +186,25 @@ body {
     display: block; 
 }
 
+/* ==========================================
+   DISEÑO ADAPTABLE (CELULARES Y TABLETS)
+   ========================================== */
 @media (max-width: 1024px) {
-    .contenedor {
+    .dos-columnas {
         flex-direction: column;
-        margin-bottom: 60px; 
     }
-
     .input-section, .output-section {
         width: 100%;
         margin-bottom: 20px; 
     }
-
-    .button-container {
+    .button-group {
         flex-direction: column;
         align-items: center;
-        position: static;
-        bottom: auto;
-        transform: none;
-    }
-
-    .button-group {
-        margin-bottom: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    .contenedor {
-        flex-direction: column;
-        margin-bottom: 60px; 
-    }
-
-    .input-section, .output-section {
-        width: 100%;
-        margin-bottom: 20px; 
-    }
-
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-        position: static;
-        bottom: auto;
-        transform: none;
-    }
-
-    .output-image {
-        display: none; 
-    }
-
     .btn {
         width: 100%; 
-        margin-bottom: 10px;
     }
-};
+}
